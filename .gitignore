@@ -1,0 +1,4 @@
+github-copilot/hosts.json
+zed/.tmp*
+zed/**/*.mdb
+zed/conversations/*
