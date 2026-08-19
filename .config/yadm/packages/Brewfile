@@ -1,5 +1,88 @@
+# Shell / dotfiles
 brew "bash"
-brew "git"
 brew "yadm"
 brew "shellcheck"
 brew "shfmt"
+
+# Git
+brew "git"
+brew "git-delta"
+brew "gh"
+
+# GNU / Unix essentials
+brew "coreutils"
+brew "findutils"
+brew "gnu-sed"
+brew "gawk"
+brew "grep"
+brew "make"
+
+# General CLI tools
+brew "curl"
+brew "wget"
+brew "jq"
+brew "yq"
+brew "tree"
+brew "watch"
+brew "less"
+brew "file"
+
+# Modern CLI replacements / quality of life
+brew "bat"
+brew "eza"
+brew "fd"
+brew "ripgrep"
+brew "fzf"
+brew "zoxide"
+brew "dust"
+brew "duf"
+brew "btop"
+brew "procs"
+
+# Terminal / sessions
+brew "tmux"
+
+# Development helpers
+brew "direnv"
+brew "pkg-config"
+brew "cmake"
+brew "ninja"
+
+# Crypto / libraries commonly needed for builds
+brew "openssl@3"
+brew "readline"
+brew "sqlite"
+brew "xz"
+brew "zstd"
+
+# Networking / diagnostics
+brew "nmap"
+brew "iperf3"
+brew "mtr"
+brew "tcpdump"
+brew "bind"
+brew "whois"
+
+# JSON / HTTP / API work
+brew "httpie"
+
+# Archives
+brew "p7zip"
+brew "unzip"
+
+# Runtime / version management
+brew "mise"
+
+# Languages / runtimes
+brew "bun"
+brew "node"
+brew "python"
+brew "go"
+brew "rust"
+
+# Containers
+brew "docker"
+brew "docker-compose"
+
+# macOS helpers
+brew "mas"
