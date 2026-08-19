@@ -88,3 +88,8 @@ cask "ghostty"
 
 # macOS helpers
 brew "mas"
+
+# OpenAI
+
+cask "chatgpt"
+cask "codex"
