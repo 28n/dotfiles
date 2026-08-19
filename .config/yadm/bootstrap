@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+
+set -Eeuo pipefail
+
+readonly OS="$(uname -s)"
+readonly PACKAGES_DIR="$HOME/.config/yadm/packages"
+
+case "$OS" in
+    Darwin)
+        if ! command -v brew >/dev/null 2>&1; then
+            echo "Homebrew is required before running the macOS bootstrap."
+            exit 1
+        fi
+
+        brew bundle --file="$PACKAGES_DIR/Brewfile"
+        ;;
+
+    Linux)
+        echo "Linux bootstrap is not implemented yet."
+        echo "Install the packages listed in $PACKAGES_DIR/debian.txt."
+        ;;
+
+    *)
+        echo "Unsupported operating system: $OS"
+        exit 1
+        ;;
+esac
+
+yadm alt
+echo "Bootstrap complete."

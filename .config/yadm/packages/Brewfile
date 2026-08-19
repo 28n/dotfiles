@@ -1,0 +1,5 @@
+brew "bash"
+brew "git"
+brew "yadm"
+brew "shellcheck"
+brew "shfmt"
