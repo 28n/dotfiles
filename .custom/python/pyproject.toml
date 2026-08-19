@@ -1,0 +1,25 @@
+[project]
+name = "config-worker"
+version = "0.1.0"
+description = "Local worker for generating dynamic configuration files"
+requires-python = ">=3.12"
+dependencies = [
+  "jinja2>=3.1",
+  "pyyaml>=6.0",
+  "rich>=14.0",
+  "tomli-w>=1.2",
+  "watchdog>=6.0",
+]
+
+[dependency-groups]
+dev = [
+  "pytest>=8.0",
+  "ruff>=0.12",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"

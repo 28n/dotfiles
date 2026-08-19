@@ -74,11 +74,12 @@ brew "unzip"
 
 # Runtime / version management
 brew "mise"
+brew "uv" # ~/.custom/python environment and dependency manager
 
 # Languages / runtimes
 brew "bun"
 brew "node"
-brew "python"
+brew "python" # ~/.custom/python runtime
 brew "go"
 brew "rust"
 
