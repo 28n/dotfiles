@@ -84,5 +84,7 @@ brew "rust"
 brew "docker"
 brew "docker-compose"
 
+cask "ghostty"
+
 # macOS helpers
 brew "mas"
