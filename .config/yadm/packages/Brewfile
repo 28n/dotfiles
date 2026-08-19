@@ -5,7 +5,7 @@ brew "shellcheck"
 brew "shfmt"
 
 # Git
-brew "git"
+brew "git" # NvChad dependency
 brew "git-delta"
 brew "gh"
 
@@ -15,7 +15,7 @@ brew "findutils"
 brew "gnu-sed"
 brew "gawk"
 brew "grep"
-brew "make"
+brew "make" # NvChad dependency
 
 # General CLI tools
 brew "curl"
@@ -31,7 +31,7 @@ brew "file"
 brew "bat"
 brew "eza"
 brew "fd"
-brew "ripgrep"
+brew "ripgrep" # NvChad dependency (Telescope grep)
 brew "fzf"
 brew "zoxide"
 brew "dust"
@@ -41,6 +41,8 @@ brew "procs"
 
 # Terminal / sessions
 brew "tmux"
+brew "neovim" # NvChad dependency
+brew "tree-sitter-cli" # NvChad dependency (parser installation)
 
 # Development helpers
 brew "direnv"
@@ -85,6 +87,7 @@ brew "docker"
 brew "docker-compose"
 
 cask "ghostty"
+cask "font-jetbrains-mono-nerd-font" # NvChad dependency (UI icons)
 
 # macOS helpers
 brew "mas"

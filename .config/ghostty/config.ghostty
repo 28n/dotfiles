@@ -1,0 +1,57 @@
+# Ghostty — Tokyo glass
+# Reload after edits with Cmd+Shift+,.
+
+# Follow macOS appearance while keeping the same neon-Tokyo character.
+theme = light:TokyoNight Day,dark:TokyoNight Storm
+
+# Nerd Font glyphs power NvChad's file and UI icons.
+font-family = JetBrainsMono Nerd Font
+font-size = 14
+font-thicken = true
+font-thicken-strength = 10
+
+# Airy, translucent native macOS window.
+background-opacity = 0.90
+background-blur = 24
+window-padding-x = 14
+window-padding-y = 12
+window-padding-balance = true
+macos-titlebar-style = transparent
+macos-window-buttons = visible
+window-save-state = always
+window-colorspace = display-p3
+
+# Calm cursor and dimmed inactive panes make split layouts easier to scan.
+cursor-style = block
+cursor-style-blink = false
+unfocused-split-opacity = 0.82
+unfocused-split-fill = 111827
+mouse-hide-while-typing = true
+
+# Terminal behavior.
+scrollback-limit = 10000000
+copy-on-select = clipboard
+clipboard-read = ask
+clipboard-write = allow
+confirm-close-surface = false
+shell-integration = detect
+shell-integration-features = cursor,sudo,title,ssh-env,ssh-terminfo,path
+
+# Splits: Cmd+D / Cmd+Shift+D create them; Cmd+Option+H/J/K/L moves around.
+keybind = cmd+alt+h=goto_split:left
+keybind = cmd+alt+j=goto_split:down
+keybind = cmd+alt+k=goto_split:up
+keybind = cmd+alt+l=goto_split:right
+keybind = cmd+ctrl+equal=equalize_splits
+
+# A little personality for the Dock icon.
+macos-icon = custom-style
+macos-icon-frame = aluminum
+macos-icon-ghost-color = c0caf5
+macos-icon-screen-color = 1a1b26,7aa2f7,bb9af7
+
+# Optional drop-down terminal. Uncommenting this requests Accessibility access.
+# keybind = global:cmd+backquote=toggle_quick_terminal
+# quick-terminal-position = top
+# quick-terminal-animation-duration = 0.18
+# quick-terminal-autohide = true
