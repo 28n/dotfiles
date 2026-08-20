@@ -97,3 +97,6 @@ brew "mas"
 
 cask "chatgpt"
 cask "codex"
+
+brew "ansible"
+brew "ansible-lint"
