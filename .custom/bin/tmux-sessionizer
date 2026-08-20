@@ -1,0 +1,47 @@
+#!/usr/bin/env bash
+
+set -Eeuo pipefail
+
+search_roots=(
+	"$HOME/Projects"
+	"$HOME/Developer"
+	"$HOME/Code"
+	"$HOME/.config"
+	"$HOME/.custom"
+)
+
+existing_roots=()
+for root in "${search_roots[@]}"; do
+	[[ -d "$root" ]] && existing_roots+=("$root")
+done
+
+if ((${#existing_roots[@]} == 0)); then
+	printf 'No project roots found.\n' >&2
+	exit 1
+fi
+
+selection="$({
+	printf '%s\n' "${existing_roots[@]}"
+	fd --hidden --type d --max-depth 3 --exclude .git --exclude node_modules --exclude .venv . "${existing_roots[@]}" 2>/dev/null
+} | awk '!seen[$0]++' | fzf \
+	--prompt=' workspace  ' \
+	--height=100% \
+	--layout=reverse \
+	--border=rounded \
+	--info=inline \
+	--preview='eza --tree --level=2 --icons --color=always {} 2>/dev/null | head -120')"
+
+[[ -z "$selection" ]] && exit 0
+
+session_name="$(basename "$selection" | tr '.:' '__' | tr -cd '[:alnum:]_-')"
+[[ -z "$session_name" ]] && session_name="workspace"
+
+if ! tmux has-session -t "=$session_name" 2>/dev/null; then
+	tmux new-session -d -s "$session_name" -c "$selection"
+fi
+
+if [[ -n "${TMUX:-}" ]]; then
+	tmux switch-client -t "=$session_name"
+else
+	exec tmux attach-session -t "=$session_name"
+fi
