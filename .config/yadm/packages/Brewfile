@@ -101,3 +101,5 @@ cask "codex"
 
 brew "ansible"
 brew "ansible-lint"
+
+cask "cursor"
