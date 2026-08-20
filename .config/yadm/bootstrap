@@ -6,24 +6,25 @@ readonly OS="$(uname -s)"
 readonly PACKAGES_DIR="$HOME/.config/yadm/packages"
 
 case "$OS" in
-    Darwin)
-        if ! command -v brew >/dev/null 2>&1; then
-            echo "Homebrew is required before running the macOS bootstrap."
-            exit 1
-        fi
+Darwin)
+  if ! command -v brew >/dev/null 2>&1; then
+    echo "Homebrew is required before running the macOS bootstrap."
+    exit 1
+  fi
 
-        brew bundle --file="$PACKAGES_DIR/Brewfile"
-        ;;
+  brew bundle --file="$PACKAGES_DIR/Brewfile"
+  ;;
 
-    Linux)
-        echo "Linux bootstrap is not implemented yet."
-        echo "Install the packages listed in $PACKAGES_DIR/debian.txt."
-        ;;
+Linux)
+  echo "Linux bootstrap is not implemented yet."
+  echo "Install the packages listed in $PACKAGES_DIR/debian.txt."
+  echo "Todo: Automate Linux bootstrap with apt / other package manager install"
+  ;;
 
-    *)
-        echo "Unsupported operating system: $OS"
-        exit 1
-        ;;
+*)
+  echo "Unsupported operating system: $OS"
+  exit 1
+  ;;
 esac
 
 yadm alt
