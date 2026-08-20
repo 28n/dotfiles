@@ -1,6 +1,6 @@
 # Listing & directory traversal
-alias ls='eza --icons --'
-alias ll='eza --icons -lah --'
+alias ls='eza --icons -a --'
+alias ll='eza --icons -la --'
 
 # Old to New Tools
 alias cat="bat"
