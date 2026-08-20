@@ -1,13 +1,13 @@
 # Shell / dotfiles
-brew "bash"
-brew "yadm"
-brew "shellcheck"
-brew "shfmt"
+brew "bash" # Shell
+brew "yadm" # Dotfile Manager
+brew "shellcheck" # Linter for bash script
+brew "shfmt" # Formatter for bash script
 
 # Git
 brew "git" # NvChad dependency
-brew "git-delta"
-brew "gh"
+brew "git-delta" # Better Diff and Status Highlighting
+brew "gh" # Github Cli
 
 # GNU / Unix essentials
 brew "coreutils"
@@ -18,14 +18,14 @@ brew "grep"
 brew "make" # NvChad dependency
 
 # General CLI tools
-brew "curl"
-brew "wget"
-brew "jq"
-brew "yq"
-brew "tree"
-brew "watch"
-brew "less"
-brew "file"
+brew "curl" # http stuff
+brew "wget" # async http stuff for downloading
+brew "jq" # json stuff
+brew "yq" # better json and yaml and csv and stuff
+brew "tree" # ls but as a tree
+brew "watch" # cool for testing 
+brew "less" # nice output
+brew "file" # macos file utils
 
 # Modern CLI replacements / quality of life
 brew "bat"

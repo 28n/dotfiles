@@ -1,11 +1,7 @@
 #!/bin/bash
 
-alias ll='ls -lah'
-alias gs='git status'
-alias gd='git diff'
-alias yst='yadm status'
-alias ydf='yadm diff'
+eval "$(zoxide init bash)"
 
-# neu
-alias autobrew='brew bundle --file="$HOME/.config/yadm/packages/Brewfile"'
-
+if [[ -f "$HOME/.custom/bash/aliases.sh" ]]; then
+  source "$HOME/.custom/bash/aliases.sh"
+fi
