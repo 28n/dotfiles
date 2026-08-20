@@ -8,6 +8,5 @@ alias more="less"
 alias df="duf"
 alias top="btop"
 
-alias t="tmux"
 alias vim="nvim"
 alias vi="nvim"
