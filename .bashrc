@@ -8,11 +8,7 @@ HISTSIZE=10000
 HISTFILESIZE=20000
 shopt -s histappend checkwinsize
 
-alias ll='ls -lah'
-alias gs='git status'
-alias gd='git diff'
-alias yst='yadm status'
-alias ydf='yadm diff'
+if [[ -f "$HOME/.custom/bash/main.sh" ]]; then
+    source "$HOME/.custom/bash/main.sh"
+fi
 
-# neu
-alias autobrew='brew bundle --file="$HOME/.config/yadm/packages/Brewfile"'
