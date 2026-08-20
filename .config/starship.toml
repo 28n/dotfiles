@@ -1,0 +1,132 @@
+"$schema" = "https://starship.rs/config-schema.json"
+
+# Tokyo Night powerline — based on Starship's built-in tokyo-night preset,
+# recolored to match folke/tokyonight.nvim's Moon palette.
+format = """
+[░▒▓](#c099ff)\
+$os\
+$username\
+[](bg:#82aaff fg:#c099ff)\
+$directory\
+[](fg:#82aaff bg:#3b4261)\
+$git_branch\
+$git_status\
+[](fg:#3b4261 bg:#2f334d)\
+$python\
+$nodejs\
+$bun\
+$rust\
+$golang\
+$docker_context\
+[](fg:#2f334d bg:#1e2030)\
+$cmd_duration\
+$jobs\
+$time\
+[ ](fg:#1e2030)\
+$line_break\
+$character"""
+
+scan_timeout = 30
+command_timeout = 1000
+
+[os]
+disabled = false
+style = "bg:#c099ff fg:#1b1d2b bold"
+format = "[ $symbol]($style)"
+
+[os.symbols]
+Macos = "󰀵"
+Linux = "󰌽"
+Windows = "󰍲"
+
+[username]
+show_always = false
+style_user = "bg:#c099ff fg:#1b1d2b bold"
+style_root = "bg:#c099ff fg:#ff757f bold"
+format = "[$user ]($style)"
+
+[directory]
+style = "fg:#1b1d2b bg:#82aaff bold"
+format = "[ 󰉋 $path ]($style)"
+truncation_length = 4
+truncation_symbol = "…/"
+read_only = " 󰌾"
+
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Developer" = "󰲋 "
+"Projects" = "󰲋 "
+".config" = " "
+
+[git_branch]
+symbol = ""
+style = "fg:#82aaff bg:#3b4261 bold"
+format = "[ $symbol $branch ]($style)"
+
+[git_status]
+style = "fg:#ffc777 bg:#3b4261 bold"
+format = "[$all_status$ahead_behind ]($style)"
+conflicted = "="
+ahead = "⇡${count}"
+behind = "⇣${count}"
+diverged = "⇕⇡${ahead_count}⇣${behind_count}"
+untracked = "?${count}"
+stashed = "*$count"
+modified = "!${count}"
+staged = "+${count}"
+renamed = "»${count}"
+deleted = "✘${count}"
+
+[python]
+symbol = ""
+style = "fg:#c3e88d bg:#2f334d"
+format = '[ $symbol ${pyenv_prefix}(${version})( \($virtualenv\)) ]($style)'
+
+[nodejs]
+symbol = ""
+style = "fg:#c3e88d bg:#2f334d"
+format = "[ $symbol ($version) ]($style)"
+
+[bun]
+symbol = ""
+style = "fg:#c3e88d bg:#2f334d"
+format = "[ $symbol ($version) ]($style)"
+
+[rust]
+symbol = ""
+style = "fg:#ff966c bg:#2f334d"
+format = "[ $symbol ($version) ]($style)"
+
+[golang]
+symbol = ""
+style = "fg:#86e1fc bg:#2f334d"
+format = "[ $symbol ($version) ]($style)"
+
+[docker_context]
+symbol = ""
+style = "fg:#86e1fc bg:#2f334d"
+format = "[ $symbol $context ]($style)"
+only_with_files = true
+
+[cmd_duration]
+min_time = 500
+show_milliseconds = false
+style = "fg:#ffc777 bg:#1e2030"
+format = "[ 󱎫 $duration ]($style)"
+
+[jobs]
+symbol = "󰜎"
+style = "fg:#c099ff bg:#1e2030"
+format = "[ $symbol $number ]($style)"
+
+[time]
+disabled = false
+time_format = "%H:%M"
+style = "fg:#828bb8 bg:#1e2030"
+format = "[  $time ]($style)"
+
+[character]
+success_symbol = "[❯](bold #c3e88d)"
+error_symbol = "[❯](bold #ff757f)"
+vimcmd_symbol = "[❮](bold #82aaff)"

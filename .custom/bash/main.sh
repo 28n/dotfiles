@@ -10,3 +10,8 @@ if [[ -f "$HOME/.custom/bash/tmux.sh" ]]; then
   # shellcheck source=tmux.sh
   source "$HOME/.custom/bash/tmux.sh"
 fi
+
+if [[ -f "$HOME/.custom/bash/prompt.sh" ]]; then
+  # shellcheck source=prompt.sh
+  source "$HOME/.custom/bash/prompt.sh"
+fi
